@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seismic Pulse | Lab 6 Demo</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <header>
+        <p class="small-text">CCT360 / LAB 06</p>
+        <h1>SEISMIC PULSE</h1>
+        <p>Recent earthquakes, visualized with live data.</p>
+    </header>
+
+    <main class="card">
+        <p class="small-text">LATEST MAGNITUDE 2.5+ EVENT</p>
+
+        <div id="pulse" class="pulse">
+            <span id="magnitude">M --</span>
+        </div>
+
+        <p class="small-text">LOCATION</p>
+        <h2 id="location">Waiting for data...</h2>
+        <p class="small-text">TIME SINCE EVENT</p>
+        <h2 id="elapsed">--</h2>
+        <p id="status" aria-live="polite">Loading earthquake data...</p>
+
+        <button id="refresh">Refresh Data</button>
+    </main>
+
+    <footer>
+        <p>Source: USGS Earthquake Feed (past 24 hours)</p>
+        <p>Elapsed time updates every second. USGS data refreshes every minute.</p>
+        <p>Colours are visual design choices, not hazard warnings.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #101820;
+    color: #f1f4f6;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 8px 0;
+    letter-spacing: 3px;
+}
+
+p {
+    color: #a8b5c0;
+}
+
+.small-text {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.card {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #19242e;
+    border: 1px solid #344552;
+    border-radius: 12px;
+}
+
+.pulse {
+    width: 180px;
+    height: 180px;
+    margin: 25px auto;
+    border: 5px solid #718695;
+    border-radius: 50%;
+    background-color: #263642;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.pulse.low {
+    border-color: #64b6a1;
+    background-color: #24544d;
+}
+
+.pulse.medium {
+    border-color: #e4b45e;
+    background-color: #68502c;
+}
+
+.pulse.high {
+    border-color: #eb7867;
+    background-color: #6b3533;
+}
+
+#magnitude {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+#elapsed {
+    color: #e4b45e;
+    font-size: 25px;
+}
+
+#status {
+    font-size: 14px;
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 25px;
+    background-color: #e4b45e;
+    color: #101820;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #f0ca88;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 12px;
+}
