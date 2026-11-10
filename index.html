@@ -4,38 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seismic Pulse | Lab 6 Demo</title>
+    <title>Seismic Pulse | Live Earthquake Monitor</title>
     <link rel="stylesheet" href="css.css">
 </head>
 
 <body>
-    <header>
-        <p class="small-text">CCT360 / LAB 06</p>
-        <h1>SEISMIC PULSE</h1>
-        <p>Recent earthquakes, visualized with live data.</p>
-    </header>
+    <div class="page">
+        <header class="topbar">
+            <div class="brand"><span class="brand-icon">◉</span> SEISMIC <span>PULSE</span></div>
+            <div class="live-label"><span class="live-dot"></span> USGS LIVE FEED</div>
+        </header>
 
-    <main class="card">
-        <p class="small-text">LATEST MAGNITUDE 2.5+ EVENT</p>
+        <section class="intro">
+            <p class="eyebrow">GLOBAL EARTHQUAKE OBSERVATORY / 01</p>
+            <h1>Every second,<br><em>the earth moves.</em></h1>
+            <p>Discover recent earthquakes through live USGS records.</p>
+        </section>
 
-        <div id="pulse" class="pulse">
-            <span id="magnitude">M --</span>
-        </div>
+        <section class="stats">
+            <div class="stat">
+                <p>RECORDED EVENTS</p>
+                <strong id="count">--</strong>
+                <span>Magnitude 2.5+ / 24 hours</span>
+            </div>
+            <div class="stat">
+                <p>STRONGEST EVENT</p>
+                <strong id="strongest">M --</strong>
+                <span>Highest magnitude in this feed</span>
+            </div>
+            <div class="stat">
+                <p>MAGNITUDE 4.5+</p>
+                <strong id="large-count">--</strong>
+                <span>Events in the past 24 hours</span>
+            </div>
+        </section>
 
-        <p class="small-text">LOCATION</p>
-        <h2 id="location">Waiting for data...</h2>
-        <p class="small-text">TIME SINCE EVENT</p>
-        <h2 id="elapsed">--</h2>
-        <p id="status" aria-live="polite">Loading earthquake data...</p>
+        <main class="layout">
+            <section class="panel latest">
+                <div class="panel-header">
+                    <p class="eyebrow">LATEST REPORTED EVENT</p>
+                    <span>01 / EVENT DETAIL</span>
+                </div>
 
-        <button id="refresh">Refresh Data</button>
-    </main>
+                <div class="feature">
+                    <div id="pulse" class="pulse">
+                        <div class="pulse-center">
+                            <small>MAGNITUDE</small>
+                            <strong id="magnitude">M --</strong>
+                            <span id="range">WAITING FOR DATA</span>
+                        </div>
+                    </div>
+                    <div class="feature-text">
+                        <p class="eyebrow">EPICENTER</p>
+                        <h2 id="location">Connecting to the earthquake feed...</h2>
+                        <div class="timer">
+                            <p>TIME SINCE EVENT</p>
+                            <strong id="elapsed">--h --m --s</strong>
+                        </div>
+                    </div>
+                </div>
 
-    <footer>
-        <p>Source: USGS Earthquake Feed (past 24 hours)</p>
-        <p>Elapsed time updates every second. USGS data refreshes every minute.</p>
-        <p>Colours are visual design choices, not hazard warnings.</p>
-    </footer>
+                <div class="details">
+                    <div><p>DEPTH</p><strong id="depth">-- km</strong></div>
+                    <div><p>COORDINATES</p><strong id="coordinates">--</strong></div>
+                    <div><p>LOCAL DATE &amp; TIME</p><strong id="event-date">--</strong></div>
+                    <div><p>RECORD STATUS</p><strong id="record-status">--</strong></div>
+                </div>
+                <a id="event-link" href="https://earthquake.usgs.gov/earthquakes/" target="_blank" rel="noopener noreferrer">VIEW EVENT ON USGS ↗</a>
+            </section>
+
+            <section class="panel recent">
+                <div class="panel-header">
+                    <p class="eyebrow">RECENT ACTIVITY</p>
+                    <button id="refresh">↻ Refresh</button>
+                </div>
+                <p class="recent-note">The five newest magnitude 2.5+ events.</p>
+
+                <div class="event-row" id="row-0">
+                    <div class="event-top"><strong id="mag-0">M --</strong><span id="place-0">Waiting for data...</span></div>
+                    <div class="track"><div id="bar-0"></div></div>
+                </div>
+                <div class="event-row" id="row-1">
+                    <div class="event-top"><strong id="mag-1">M --</strong><span id="place-1">Waiting for data...</span></div>
+                    <div class="track"><div id="bar-1"></div></div>
+                </div>
+                <div class="event-row" id="row-2">
+                    <div class="event-top"><strong id="mag-2">M --</strong><span id="place-2">Waiting for data...</span></div>
+                    <div class="track"><div id="bar-2"></div></div>
+                </div>
+                <div class="event-row" id="row-3">
+                    <div class="event-top"><strong id="mag-3">M --</strong><span id="place-3">Waiting for data...</span></div>
+                    <div class="track"><div id="bar-3"></div></div>
+                </div>
+                <div class="event-row" id="row-4">
+                    <div class="event-top"><strong id="mag-4">M --</strong><span id="place-4">Waiting for data...</span></div>
+                    <div class="track"><div id="bar-4"></div></div>
+                </div>
+
+                <div class="feed-bottom">
+                    <span class="live-dot"></span>
+                    <p id="status" aria-live="polite">Loading the latest records...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span>DATA: <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank" rel="noopener noreferrer">USGS EARTHQUAKE FEED</a></span>
+            <span>Feed refreshes every 60 seconds. Timer updates every second.</span>
+            <span>Colours show magnitude groups, not risk or early warnings.</span>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
